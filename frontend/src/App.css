@@ -1,0 +1,29 @@
+body{background-color: white}
+.sidebar{width: 200px;;padding:"25px";background-color: rgb(222, 223, 223);min-height: 100vh;}
+.sidebar a{display: block;color:rgb(13, 13, 122);text-decoration: none;margin-bottom: 40px;font-size: 18px;margin-top: 40px;}
+.sidebar a:hover{color: rgb(51, 71, 255);}
+.sidebar li{list-style: none;}
+.navbar{display:flex;justify-content:space-between;padding:15px 30px;border-bottom:1px solid bl;background-color:rgb(39, 43, 45);align-items: center;color:rgb(255, 255, 255);}
+.dash{font-size: 18px;padding: 10px; border: 1px solid black;background-color: aliceblue;padding: 20px;margin-top: 30px;}
+.dash p{padding: 10px ;}
+table th{background-color:gainsboro;text-align: center;}
+table td{background-color: rgb(253, 253, 253);text-align: center;border: 1px solid gray;}
+.profile{border: 1px solid black;padding: 20px;background-color: aliceblue;}
+.profile p{font-size: 18px;padding: 10px;}
+h2{margin-top: 0;margin-bottom: 20px;color: rgb(7, 43, 91)}
+form{padding: 20px;margin-bottom: 20px;}
+.searchfilter{margin-bottom: 20px;}
+.loginhead{margin-left: 15px;margin-top: 10px;}
+label{margin-right: 10px;}
+input{margin-right: 10px;}
+select{margin-left: 10px;margin-right: 10px;}
+.add{background-color: rgb(10, 40, 88);color: white;cursor: pointer;padding: 5px;font-size: 13px;font-weight: bold;}
+.edit{margin-left:10px;margin-right:20px;background-color:rgb(107, 243, 243);cursor: pointer;}
+.delete{background-color: rgb(216, 53, 53);color: white;cursor: pointer;}
+.prev{background-color:lightgray;margin-right: 10px;cursor: pointer;}
+.nxt{background-color:lightgray;margin-right: 10px;cursor: pointer;}
+.sidebar li{transition: transform 0.3s;}
+.sidebar li:hover{transform: scale(1.1);}
+.search{background-color: rgb(10, 40, 88);color: white;cursor: pointer;}
+.cancel{background-color: rgb(10, 40, 88);color: white;margin-left: 10px;cursor: pointer;}
+.login{background-color: aqua;margin-left: 85px;padding: 8px;cursor: pointer;}
