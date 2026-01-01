@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-^i9+4!z5o*7cc-cima!g9bl=*8swm^u4!^-_cr)t=f40!(gh=d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -144,3 +143,7 @@ SIMPLE_JWT = {
 import os
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
