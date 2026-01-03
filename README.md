@@ -17,10 +17,3 @@ A full-stack Asset & Inventory Management System built using Django REST Framewo
 - Database: SQLite 
 - Hosting: Render (Backend + Frontend)
 
-## Live Demo
-- Frontend: (Render URL)
-- Backend API: (Render URL)
-
-## Author
-Pranav  
-B.Tech Computer Science Graduate
