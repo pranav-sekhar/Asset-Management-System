@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";  //callback used to remove useeffect warning thats all
 import API from "../api";
+import {jwtDecode} from "jwt-decode";
 
 function Assets(){
     const[assets,setassets] = useState([])
@@ -33,6 +34,10 @@ function Assets(){
     useEffect (()=>{
         fetchassets();
     },[fetchassets])  //wo callback jst [] is enough
+
+    //define user
+    const token = localStorage.getItem("token")
+    const user = token ? jwtDecode(token) : null
 
     const handlesubmit = async (e) =>{
         e.preventDefault()
@@ -69,23 +74,24 @@ function Assets(){
     return(
         <div className="assethead">
             <h2>MANAGE ASSETS</h2>
+            {user?.is_staff &&(
             <form onSubmit={handlesubmit} style={{display:"flex", padding:"15px"}}>
                 <div style={{marginRight:"10px"}}><label>Asset Name :</label>
-                <input placeholder="Enter asset name" value={name} onChange={e=>setname(e.target.value)}/></div>
+                <input placeholder="Enter asset name" value={name} onChange={e=>setname(e.target.value)} required/></div>
                 <div style={{marginRight:"10px"}}><label>Asset Type :</label>
-                <input placeholder="Enter asset type" value={assettype} onChange={e=>setassettype(e.target.value)}/></div>
+                <input placeholder="Enter asset type" value={assettype} onChange={e=>setassettype(e.target.value)} required/></div>
                 <div style={{marginRight:"10px"}}><label>Serial No :</label>
-                <input placeholder="Enter serial no" value={serialno} onChange={e=>setserialno(e.target.value)}/></div>
+                <input placeholder="Enter serial no" value={serialno} onChange={e=>setserialno(e.target.value)} required/></div>
                 <div style={{marginRight:"10px"}}><label>Status :</label>
-                <select value={status} onChange={e=>setstatus(e.target.value)}>
+                <select value={status} onChange={e=>setstatus(e.target.value)} required>
                     <option>Available</option>
                     <option>Assigned</option>
                     <option>Repair</option>
-                </select></div>
-                
+                </select></div>                
             <button className="add" type="submit">{editid ? "Update Asset" : "Add New Asset"}</button>
             {editid && <button className="cancel" type="button" onClick={resetform}>Cancel</button>}
-            </form>
+            </form>)}
+
             <div className="searchfilter">
             {/*search feature*/}
             <input placeholder="Search assets..." value={search} onChange={e=>setsearch(e.target.value)}/>
@@ -103,7 +109,7 @@ function Assets(){
             <table border="1" cellPadding="12">
                 <thead>
                     <tr>
-                        <th>Asset ID</th><th>Name</th><th>Type</th><th>Serial No</th><th>Status</th><th>Update/Delete Info</th>
+                        <th>Asset ID</th><th>Name</th><th>Type</th><th>Serial No</th><th>Status</th>{user?.is_staff &&<th>Actions</th>}
                     </tr>
                 </thead>
                 <tbody>
@@ -114,10 +120,11 @@ function Assets(){
                             <td>{asset.asset_type}</td>
                             <td>{asset.serial_no}</td>
                             <td>{asset.status}</td>
+                            {user?.is_staff &&(
                             <td className="editdel">
                                 <button className="edit" onClick={()=>handledit(asset)}>Edit</button>
                                 <button className="delete" onClick={()=>handledelete(asset.id)}>Delete</button>
-                            </td>
+                            </td>)}
                         </tr>
                     ))}
                 </tbody>

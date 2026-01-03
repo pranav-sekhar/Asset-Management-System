@@ -25,9 +25,9 @@ function Login({onLogin}){
             {error && <p style={{color:"red"}}>{error}</p>}
             <form onSubmit={handlelogin}>
                 <div><label>Username :</label>
-                <input placeholder="Username" value={username} onChange={e =>setusername(e.target.value)} required/></div><br/><br/>
+                <input placeholder="Enter username" value={username} onChange={e =>setusername(e.target.value)} required/></div><br/><br/>
                 <div><label>Password :</label>
-                <input type="password" placeholder="Password" value={password} onChange={e =>setpassword(e.target.value)} required/></div><br/><br/>
+                <input type="password" placeholder="Enter password" value={password} onChange={e =>setpassword(e.target.value)} required/></div><br/><br/>
                 <button className="login" type="submit">Login</button>
             </form>
         </div>

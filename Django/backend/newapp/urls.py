@@ -1,7 +1,7 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from .views import(
-    AssetViewSet,InventoryViewSet,AssetAssignmentViewSet,RepairTicketViewSet,dashboard_analytics
+    AssetViewSet,InventoryViewSet,AssetAssignmentViewSet,RepairTicketViewSet,dashboard_analytics,allassets,createemp
 )
 
 router = DefaultRouter()
@@ -12,5 +12,7 @@ router.register('repairs',RepairTicketViewSet)
 
 urlpatterns = [
     path('',include(router.urls)),
-    path('dashboard/',dashboard_analytics)
+    path('dashboard/',dashboard_analytics),
+    path('assetsall/',allassets),
+    path('employee/create/',createemp),
 ] 
