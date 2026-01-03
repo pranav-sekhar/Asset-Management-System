@@ -17,3 +17,8 @@ A full-stack Asset & Inventory Management System built using Django REST Framewo
 - Database: SQLite 
 - Hosting: Render (Backend + Frontend)
 
+## Deployment
+- Platform : Render
+- Live demo : https://asset-management-system-1-dbcl.onrender.com
+  
+
