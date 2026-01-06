@@ -27,3 +27,7 @@ select{margin-left: 10px;margin-right: 10px;}
 .search{background-color: rgb(10, 40, 88);color: white;cursor: pointer;}
 .cancel{background-color: rgb(10, 40, 88);color: white;margin-left: 10px;cursor: pointer;}
 .login{background-color: aqua;margin-left: 85px;padding: 8px;cursor: pointer;}
+.login-container {height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.login-container form {display: flex; flex-direction: column; width: 300px;border: 1px solid black;padding: 40px;background-color: aliceblue;}
+.login-container input {padding: 6px; margin-top: 5px;}
+.login-container button {margin-top: 15px; padding: 10px; cursor: pointer; width: 80px;margin-left: 110px;}
