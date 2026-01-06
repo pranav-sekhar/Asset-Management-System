@@ -15,7 +15,6 @@ form{padding: 20px;margin-bottom: 20px;}
 .searchfilter{margin-bottom: 20px;}
 .loginhead{margin-left: 15px;margin-top: 10px;}
 label{margin-right: 10px;}
-input{margin-right: 10px;}
 select{margin-left: 10px;margin-right: 10px;}
 .add{background-color: rgb(10, 40, 88);color: white;cursor: pointer;padding: 5px;font-size: 13px;font-weight: bold;}
 .edit{margin-left:10px;margin-right:20px;background-color:rgb(107, 243, 243);cursor: pointer;}
