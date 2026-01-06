@@ -20,7 +20,7 @@ function Login({onLogin}){
     }
 
     return(
-        <div>
+        <div className="login-container">
             <h2 className="loginhead">LOGIN</h2>
             {error && <p style={{color:"red"}}>{error}</p>}
             <form onSubmit={handlelogin}>
